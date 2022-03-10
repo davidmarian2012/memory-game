@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: #939dc8;
+    background: -webkit-linear-gradient(
+        150deg,
+        #939dc8,
+        #454c70
+    );
+    background: linear-gradient(
+        150deg,
+        #939dc8,
+        #454c70
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    color:rgb(250, 250, 250);
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+section{
+    display: grid;
+    grid-template-columns: repeat(4,8rem);
+    grid-template-rows: repeat(4,8rem);
+    grid-gap: 0.5rem;
+    perspective: 800px;
+}
+
+.card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+    border-radius: 5px;
+}
+
+.face, .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 5px;
+}
+
+.back{
+    background-color: rgb(39, 45, 59);
+    backface-visibility: hidden;
+}
+
+.toggleCard{
+    transform: rotateY(180deg);
+}
+
+.face{
+    transform: rotateY(-180deg);
+}
